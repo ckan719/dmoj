@@ -1,0 +1,21 @@
+id: judge_1
+key: kCIXNgpto87a3q8dKauxR2k8N9AhkFVgecJHwCN7k9oPB+UWf6kCx0OiLfCCDB2su0+V0VluiayHCRAfczk8fYya+HEHceoywlyo
+problem_storage_root:
+  - /var/www/html/judge/testsuite
+
+runtime:
+  as_x64: /usr/bin/x86_64-linux-gnu-as
+  as_x86: /usr/bin/as
+  awk: /usr/bin/mawk
+  cat: /usr/bin/cat
+  g++: /usr/bin/g++
+  g++11: /usr/bin/g++
+  g++14: /usr/bin/g++
+  g++17: /usr/bin/g++
+  gcc: /usr/bin/gcc
+  gcc11: /usr/bin/gcc
+  ld_x64: /usr/bin/x86_64-linux-gnu-ld
+  ld_x86: /usr/bin/ld
+  perl: /usr/bin/perl
+  python3: /usr/bin/python3
+  sed: /usr/bin/sed
