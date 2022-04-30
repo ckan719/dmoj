@@ -5,7 +5,7 @@
     cp judge.yml ./judge/judge.yml
     cp local_settings.py ./site/dmoj/local_settings.py // if Prod : insert host in ALLOWED_HOSTS
 ```
-#How to install the application
+# How to install the application
 ```
    make up
 
@@ -31,7 +31,7 @@
    supervisorctl update
    service nginx restart
 ```
-#Setting judge
+# Setting judge
 ```
    make exec
    cd judge // create judge to get id and key, after that change it in judge.yml
@@ -42,11 +42,11 @@
 page: http://localhost
 ```
 
-*Account:
+# Account:
    - username: admin
    - password: admin
 
-*Create a new account supervisor
+# Create a new account supervisor
 ```
    make exec
    . dmojsite/bin/activate
