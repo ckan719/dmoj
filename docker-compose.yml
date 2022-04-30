@@ -1,0 +1,44 @@
+version: '3'
+services:
+  site:
+    build:
+      context: ./site
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./:/var/www/html/
+    depends_on:
+      - db
+    ports:
+      - 80:80
+  db:
+    image: mariadb
+    environment:
+      MYSQL_USER: root
+      MYSQL_DATABASE: dmoj
+      MYSQL_ROOT_PASSWORD: dmoj
+
+  myadmin:
+    image: phpmyadmin:5
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: 123
+    ports:
+      - 9000:80
+    depends_on:
+      - db
+  
+  # judge:
+  #   build: 
+  #     context: ./judge
+  #     dockerfile: ./.docker/tier3/Dockerfile
+  #   ports:
+  #     - 9998:9998
+  #     - 9999:9999
+  #   volumes:
+  #     - ./judge/testsuite:/problems
+  #   cap_add:
+  #     - SYS_PTRACE
+  #   command: run -p "9999" -c /problems/judge.yml "localhost" "$JUDGE_NAME" "$JUDGE_AUTHENTICATION_KEY"
+
+    
