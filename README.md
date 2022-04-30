@@ -1,3 +1,5 @@
+# Requirement
+    - install docker, docker compose latest(2.4.1), make
 # How to run
 ```
     make site
