@@ -6,6 +6,8 @@
     make judge
     cp judge.yml ./judge/judge.yml
     cp local_settings.py ./site/dmoj/local_settings.py // if Prod : insert host in ALLOWED_HOSTS
+    cd site && git submodule init && git submodule update
+
 ```
 # How to install the application
 ```
@@ -26,6 +28,8 @@
    python3 manage.py loaddata navbar
    python3 manage.py loaddata language_small
    python3 manage.py loaddata demo
+
+   cp -r resources/libs/ /tmp/static/libs
 
    service redis-server start
    service supervisor stop

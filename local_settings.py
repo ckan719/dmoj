@@ -17,7 +17,7 @@ DEBUG = False  # Change to False once you are done with runserver testing.
 
 # Uncomment and set to the domain names this site is intended to serve.
 # You must do this once you set DEBUG to False.
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['stu-dmoj.cf']
 
 # Optional apps that DMOJ can make use of.
 INSTALLED_APPS += (
@@ -135,8 +135,8 @@ STATIC_URL = '/static/'
 ############################################
 
 ## DMOJ site display settings.
-SITE_NAME = 'DMOJ'
-SITE_LONG_NAME = 'DMOJ: Modern Online Judge'
+SITE_NAME = 'STU DMOJ'
+SITE_LONG_NAME = 'STU DMOJ DEV'
 SITE_ADMIN_EMAIL = 'admin@example.com'
 TERMS_OF_SERVICE_URL = '//dmoj.ca/tos' # Use a flatpage.
 
@@ -179,8 +179,8 @@ EVENT_DAEMON_POST = 'ws://127.0.0.1:15101/'
 # i.e. the path to /channels/ exposed by the daemon, through whatever proxy setup you have.
 
 # Using our standard nginx configuration, these should be.
-EVENT_DAEMON_GET = 'ws://site/event/'
-EVENT_DAEMON_GET_SSL = 'wss://site/event/' # Optional
+EVENT_DAEMON_GET = 'ws://127.0.0.1/event/'
+EVENT_DAEMON_GET_SSL = 'wss://127.0.0.1/event/' # Optional
 EVENT_DAEMON_POLL = '/channels/'
 
 # If you would like to use the AMQP-based event server from <https://github.com/DMOJ/event-server>,

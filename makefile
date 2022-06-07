@@ -5,10 +5,10 @@ judge:
 	git clone --recursive https://github.com/DMOJ/judge.git
 
 up:
-	docker-compose up -d
+	docker compose up -d
 
 build:
-	docker-compose up -d --build
+	docker compose up -d --build
 
 exec:
-	docker-compose exec site bash
+	docker compose exec site bash

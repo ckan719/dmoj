@@ -1,5 +1,21 @@
 version: '3'
 services:
+  caddy:
+    image: caddy:alpine
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - site
+
+  whoami:
+    image: containous/whoami
+    container_name: whoami
+
   site:
     build:
       context: ./site
@@ -8,8 +24,7 @@ services:
       - ./:/var/www/html/
     depends_on:
       - db
-    ports:
-      - 80:80
+
   db:
     image: mariadb
     environment:
@@ -17,16 +32,16 @@ services:
       MYSQL_DATABASE: dmoj
       MYSQL_ROOT_PASSWORD: dmoj
 
-  myadmin:
-    image: phpmyadmin:5
-    environment:
-      PMA_HOST: db
-      PMA_USER: root
-      PMA_PASSWORD: 123
-    ports:
-      - 9000:80
-    depends_on:
-      - db
+  # myadmin:
+  #   image: phpmyadmin:5
+  #   environment:
+  #     PMA_HOST: db
+  #     PMA_USER: root
+  #     PMA_PASSWORD: 123
+  #   ports:
+  #     - 9000:80
+  #   depends_on:
+  #     - db
   
   # judge:
   #   build: 
@@ -40,5 +55,7 @@ services:
   #   cap_add:
   #     - SYS_PTRACE
   #   command: run -p "9999" -c /problems/judge.yml "localhost" "$JUDGE_NAME" "$JUDGE_AUTHENTICATION_KEY"
-
-    
+volumes:
+  caddy_data: null
+  caddy_config: null
+  
