@@ -19,3 +19,4 @@ runtime:
   perl: /usr/bin/perl
   python3: /usr/bin/python3
   sed: /usr/bin/sed
+  v8dmoj: /usr/bin/v8dmoj
